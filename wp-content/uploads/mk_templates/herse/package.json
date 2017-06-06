@@ -1,0 +1,12 @@
+{
+    "required_plugins": [
+        "js_composer_theme",
+        "artbees-captcha",
+        "LayerSlider",
+        "woocommerce"
+    ],
+    "importing_data": [{
+        "name": "layer-slider",
+        "content_path": "LayerSlider/sample_slides.zip"
+    }]
+}

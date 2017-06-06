@@ -1,0 +1,6 @@
+{
+    "required_plugins": [
+        "js_composer_theme",
+        "artbees-captcha"
+    ]
+}
