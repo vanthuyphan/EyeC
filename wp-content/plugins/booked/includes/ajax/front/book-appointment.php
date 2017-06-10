@@ -31,6 +31,11 @@ else:
 endif;
 
 if ($appt_is_available):
+    $products = '';
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+       $product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+       $products .= $product_id.';';
+    }
 
 	$time_format = get_option('time_format');
 	$date_format = get_option('date_format');
@@ -130,6 +135,7 @@ if ($appt_is_available):
 				update_post_meta($post_id, '_appointment_guest_email', $email);
 				update_post_meta($post_id, '_appointment_timestamp', $timestamp);
 				update_post_meta($post_id, '_appointment_timeslot', $timeslot);
+				update_post_meta($post_id, '_appointment_frames', $products);
 				
 				if ($appointment_default_status == 'publish'): wp_publish_post($post_id); endif;
 		
@@ -226,7 +232,8 @@ if ($appt_is_available):
 		update_post_meta($post_id, '_appointment_timestamp', $timestamp);
 		update_post_meta($post_id, '_appointment_timeslot', $timeslot);
 		update_post_meta($post_id, '_appointment_user', $user_id);
-		
+		update_post_meta($post_id, '_appointment_frames', $products);
+
 		if ($appointment_default_status == 'publish'): wp_publish_post($post_id); endif;
 	
 		if (apply_filters('booked_update_cf_meta_value', true)) {
@@ -283,6 +290,7 @@ if ($appt_is_available):
 		endif;
 		
 		do_action('booked_new_appointment_created', $post_id);
+		WC()->cart->empty_cart();
 		
 		$_SESSION['appt_requested'] = 1;
 	
@@ -412,6 +420,7 @@ if ($appt_is_available):
 				update_post_meta($post_id, '_appointment_timestamp', $timestamp);
 				update_post_meta($post_id, '_appointment_timeslot', $timeslot);
 				update_post_meta($post_id, '_appointment_user', $user_id);
+				update_post_meta($post_id, '_appointment_frames', $products);
 				
 				if ($appointment_default_status == 'publish'): wp_publish_post($post_id); endif;
 		
@@ -424,6 +433,7 @@ if ($appt_is_available):
 				}
 		
 				do_action('booked_new_appointment_created', $post_id);
+				WC()->cart->empty_cart();
 		
 				$_SESSION['appt_requested'] = 1;
 				$_SESSION['new_account'] = 1;
@@ -510,6 +520,7 @@ elseif ( $is_new_registration ):
 			endif;
 	
 			do_action('booked_new_appointment_created', $post_id);
+			WC()->cart->empty_cart();
 	
 			$_SESSION['appt_requested'] = 1;
 			$_SESSION['new_account'] = 1;

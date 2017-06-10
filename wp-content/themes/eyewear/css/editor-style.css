@@ -1,0 +1,333 @@
+html {
+    font-size : 15px;
+    }
+
+body {
+    font-family                : Roboto;
+    font-weight                : 400;
+    font-size                  : 1rem;
+    line-height                : 1.8em;
+    color                      : #363636;
+    background                 : #FFFFFF;
+    overflow-x                 : hidden;
+    -webkit-text-size-adjust   : 100%;
+    -webkit-overflow-scrolling : touch;
+    -webkit-font-smoothing     : antialiased !important;
+    }
+
+html,
+button,
+input,
+select,
+textarea {
+    color                 : #363636;
+    outline               : none;
+    -webkit-border-radius : 4px;
+    -moz-border-radius    : 4px;
+    -o-border-radius      : 4px;
+    border-radius         : 4px;
+    }
+
+label {
+    font-weight : 400;
+    font-size   : .9em;
+    color       : #292929;
+    }
+
+b,
+strong {
+    font-weight : 600;
+    color       : #030303;
+    }
+
+dt {
+    margin-bottom : 5px;
+    }
+
+dd {
+    margin-bottom : 15px;
+    }
+
+dl {
+    margin-bottom : 30px;
+    }
+
+dl dt {
+    color : #030303;
+    }
+
+::selection {
+    background : #F1AC59;
+    color      : #FFFFFF;
+    }
+
+::-moz-selection {
+    background : #F1AC59;
+    color      : #FFFFFF;
+    }
+
+/*---------------------------------
+  BASIC TYPOGRAPHY
+---------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family : Roboto;
+    color       : #000000;
+    font-weight : 400;
+    }
+
+h1 {
+    font-weight   : 400;
+    font-size     : 3em;
+    line-height   : 1.359375em;
+    margin-top    : 0.453125em;
+    margin-bottom : 0em;
+    }
+
+h2 {
+    font-weight   : 400;
+    font-size     : 2rem;
+    line-height   : 1.359375em;
+    margin-top    : 0.453125em;
+    margin-bottom : 0.453125em;
+    }
+
+h3 {
+    font-weight   : 400;
+    font-size     : 1.5rem;
+    line-height   : 1.8125em;
+    margin-top    : 0.90625em;
+    margin-bottom : 0em;
+    }
+
+h4 {
+    font-weight   : 400;
+    font-size     : 1.2rem;
+    line-height   : 1.8125em;
+    margin-top    : 1.8125em;
+    margin-bottom : 0em;
+    }
+
+h5 {
+    font-weight   : 600;
+    font-style    : italic;
+    font-size     : 1rem;
+    line-height   : 1.8125em;
+    margin-top    : 1.8125em;
+    margin-bottom : 0em;
+    }
+
+h6 {
+    font-weight   : 600;
+    font-style    : normal;
+    font-size     : 1rem;
+    line-height   : 1.8125em;
+    margin-top    : 1.8125em;
+    margin-bottom : 0em;
+    }
+
+a {
+    font-weight : 400;
+    color       : #F1AC59;
+    }
+
+a:hover {
+    color           : #FFF2A8;
+    text-decoration : none;
+    }
+
+a:focus {
+    outline         : none;
+    outline-offset  : 0;
+    text-decoration : none;
+    color           : #FFF2A8;
+    }
+
+ul,
+ol {
+    font-size : 1rem;
+    margin    : 1.875em 0;
+    }
+
+ul li,
+ol li {
+    margin       : 0 0 1em 1.25em;
+    padding-left : .625em;
+    }
+
+code {
+    -webkit-border-radius : 3px;
+    -moz-border-radius    : 3px;
+    -o-border-radius      : 3px;
+    border-radius         : 3px;
+    padding               : 5px 10px;
+    font-size             : 12px;
+    line-height           : 18px;
+    background            : #E5E5E5;
+    color                 : #444444;
+    }
+
+img {
+    max-width : 100%;
+    }
+
+.img-responsive {
+    width : 100%;
+    }
+
+address {
+    line-height : 1.6em;
+    }
+
+.alignleft,
+img.alignleft,
+a img.alignleft {
+    float  : left;
+    margin : 15px 30px 15px 0;
+    }
+
+.alignright,
+img.alignright,
+a img.alignright {
+    float  : right;
+    margin : 15px 0 15px 30px;
+    }
+
+.aligncenter,
+img.aligncenter,
+a img.aligncenter {
+    display       : block;
+    float         : none;
+    margin-top    : .5em;
+    margin-right  : auto !important;
+    margin-bottom : .5em;
+    margin-left   : auto !important;
+    }
+
+.alignnone,
+img.alignnone,
+a img.alignnone {
+    margin-top    : .5em;
+    margin-bottom : .5em;
+    }
+
+.wp-caption {
+    margin                : 0 0 30px 0;
+    max-width             : 100%;
+    border                : 0;
+    -webkit-border-radius : 0;
+    -moz-border-radius    : 0;
+    -o-border-radius      : 0;
+    border-radius         : 0;
+    border-image          : initial;
+    text-align            : left;
+    }
+
+.wp-caption img {
+    margin-bottom : 6px;
+    }
+
+.wp-caption p.wp-caption-text,
+.wp-caption figcaption.wp-caption-text {
+    font-size : .8em;
+    color     : #505050;
+    }
+
+.wp-caption.alignnone {
+    margin-right : 30px;
+    }
+
+.wp-caption.alignleft {
+    margin-right : 30px;
+    }
+
+.wp-caption.alignright {
+    margin-left : 30px;
+    }
+
+blockquote,
+blockquote p {
+    text-align  : left;
+    font-style  : italic;
+    font-size   : 1.5rem;
+    line-height : 1.5em;
+    margin      : 0 !important;
+    }
+
+blockquote {
+    padding               : 3em;
+    background            : #F2F2F2;
+    border                : 0;
+    -webkit-border-radius : 5px;
+    -moz-border-radius    : 5px;
+    -o-border-radius      : 5px;
+    border-radius         : 5px;
+    }
+
+blockquote cite,
+blockquote cite a {
+    color        : #505050;
+    font-size    : .7em;
+    font-weight  : 600;
+    position     : relative;
+    margin-top   : 40px;
+    top          : 10px;
+    padding-left : 13px;
+    }
+
+code {
+    border     : 1px solid rgba(0, 0, 0, 0.05);
+    background : rgba(0, 0, 0, 0.05);
+    }
+
+pre {
+    font-size        : 1rem;
+    margin           : 2em 0;
+    background-color : #F2F2F2;
+    border           : none;
+    color            : #1A1A1A;
+    padding          : 2em;
+    line-height      : 2em;
+    }
+
+table {
+    margin    : 30px 0;
+    border    : 1px solid #E5E5E5;
+    font-size : 14px;
+    }
+
+table thead {
+    text-transform : uppercase;
+    font-weight    : 500;
+    color          : #000000;
+    }
+
+table thead tr {
+    border : 0;
+    }
+
+table thead th {
+    padding : 20px;
+    }
+
+table tbody tr {
+    border-top : 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+table tbody tr:nth-child(odd) {
+    background : rgba(0, 0, 0, 0.01);
+    }
+
+table tbody th {
+    padding     : 10px 20px;
+    font-weight : 400;
+    }
+
+table tbody td {
+    padding    : 10px 20px;
+    text-align : left;
+    }

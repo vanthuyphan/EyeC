@@ -38,6 +38,10 @@ echo '<div class="booked-scrollable">';
 
 		$timestamp = get_post_meta($appt_id, '_appointment_timestamp',true);
 		$timeslot = get_post_meta($appt_id, '_appointment_timeslot',true);
+		$frames = get_post_meta($appt_id, '_appointment_frames',true);
+		$frames = explode(";", $frames);
+
+
 		$cf_meta_value = get_post_meta($appt_id, '_cf_meta_value',true);
 
 		$date_display = date_i18n($date_format,$timestamp);
@@ -59,6 +63,18 @@ echo '<div class="booked-scrollable">';
 		echo '<p><strong class="booked-left-title">'.esc_html__('Time','booked').':</strong> '.$timeslotText.'</p>';
 		echo ($cf_meta_value ? '<div class="cf-meta-values">'.$cf_meta_value.'</div>' : '');
 		do_action('booked_after_appointment_information_admin');
+
+		echo '<p class="booked-modal-title bm-title-bordered">'.esc_html__('Frames Selected','booked').'</p>';
+		foreach ( $frames as $frame_item_key => $frame_item ) {
+
+		   $product = wc_get_product($frame_item);
+		   if ($product) {
+		           echo ($product ? '<div style="text-align:center;font-weight: bold;">'.$product->get_name().'</div>' : '');
+           		   echo ($product ? '<div style="text-align:center">'.$product->get_image().'</div>' : '');
+           		   echo ('<br>');
+		   }
+
+        }
 
 	endif;
 

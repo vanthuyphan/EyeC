@@ -1,0 +1,31 @@
+.vc_row {
+    margin-left  : inherit;
+    margin-right : inherit;
+    }
+
+
+.wpb_button, 
+.wpb_content_element, 
+.wpb_row, 
+ul.wpb_thumbnails-fluid >li{
+	margin: 0;
+}
+
+.progress_medium.vc_progress_bar .vc_single_bar{
+    height: 10px !important;
+}
+
+.progress_thin.vc_progress_bar .vc_single_bar{
+    height: 4px !important;
+}
+
+.progress_light.vc_progress_bar .vc_single_bar{
+    height: 2px !important;
+}
+
+
+.wpb_gmaps_widget .wpb_wrapper{
+    background: transparent;
+    padding: 0;
+    margin-bottom: 40px;
+    }
