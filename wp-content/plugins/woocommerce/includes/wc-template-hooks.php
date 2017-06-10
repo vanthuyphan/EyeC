@@ -216,7 +216,6 @@ add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment',
  * Cart widget
  */
 add_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10 );
-add_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
 
 /**
  * Cart.

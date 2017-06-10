@@ -909,7 +909,7 @@ class WC_Cart {
 
 				if ( $in_cart_quantity > 0 ) {
 					/* translators: %s: product name */
-					throw new Exception( sprintf( '<a href="%s" class="button wc-forward">%s</a> %s', wc_get_cart_url(), __( 'View cart', 'woocommerce' ), sprintf( __( 'You cannot add another "%s" to your cart.', 'woocommerce' ), $product_data->get_name() ) ) );
+					throw new Exception( sprintf( '<a href="%s" class="button wc-forward">%s</a> %s', wc_get_cart_url(), __( 'Set Up Appointment', 'woocommerce' ), sprintf( __( 'You already have this frame in Store Try-On Cart', 'woocommerce' ), $product_data->get_name() ) ) );
 				}
 			}
 
@@ -936,7 +936,7 @@ class WC_Cart {
 					throw new Exception( sprintf(
 						'<a href="%s" class="button wc-forward">%s</a> %s',
 						wc_get_cart_url(),
-						__( 'View Cart', 'woocommerce' ),
+						__( 'Set Up Appointment', 'woocommerce' ),
 						sprintf( __( 'You cannot add that amount to the cart &mdash; we have %1$s in stock and you already have %2$s in your cart.', 'woocommerce' ), wc_format_stock_quantity_for_display( $product_data->get_stock_quantity(), $product_data ), wc_format_stock_quantity_for_display( $products_qty_in_cart[ $product_data->get_stock_managed_by_id() ], $product_data ) )
 					) );
 				}

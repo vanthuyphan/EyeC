@@ -105,6 +105,9 @@
 			add_filter( 'pre_get_posts', array( &$this, 'prdctfltr_wc_query' ), 999999, 1 );
 			add_filter( 'parse_tax_query', array( &$this, 'prdctfltr_wc_tax' ), 999999, 1 );
 			add_action( 'prdctfltr_output_css', array( &$this, 'prdctfltr_add_css' ) );
+			add_filter('single_add_to_cart_text', 'woo_custom_cart_button_text');
+            add_filter( 'add_to_cart_text', 'woo_archive_custom_cart_button_text' );
+
 
 			if ( !is_admin() ) {
 				add_filter( 'woocommerce_shortcode_products_query', 'WC_Prdctfltr::add_wc_shortcode_filter', 999999 );
@@ -130,6 +133,35 @@
 			}
 
 		}
+		function woo_custom_cart_button_text() {
+
+                      global $woocommerce;
+
+                    	foreach($woocommerce->cart->get_cart() as $cart_item_key => $values ) {
+                    		$_product = $values['data'];
+
+                    		if( get_the_ID() == $_product->id ) {
+                    			return __('Already in cart - Add Again?', 'woocommerce');
+                    		}
+                    	}
+
+                    	return __('Add to cart', 'woocommerce');
+        }
+
+        function woo_archive_custom_cart_button_text() {
+
+                    	global $woocommerce;
+
+                    	foreach($woocommerce->cart->get_cart() as $cart_item_key => $values ) {
+                    		$_product = $values['data'];
+
+                    		if( get_the_ID() == $_product->id ) {
+                    			return __('Already in cart', 'woocommerce');
+                    		}
+                    	}
+
+                    	return __('Add to cart', 'woocommerce');
+        }
 
 		function prdctfltr_scripts() {
 
@@ -1360,7 +1392,7 @@
 			remove_filter( 'posts_where' , 'prdctfltr_price_filter' );
 
 			return $where;
-			
+
 		}
 
 		function prdctrfltr_add_filter( $template, $slug, $name ) {

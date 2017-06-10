@@ -324,7 +324,6 @@ if (!function_exists('mk_woocommerce_before_shop_loop')) {
 		} else {
 			$title = __('ALL PRODUCTS', 'mk_framework');
 		}
-        echo "<h4 class=\"mk-woocommerce-shop-loop__title\">{$title}</h4>";
     }
 
     add_action('woocommerce_before_shop_loop', 'mk_woocommerce_before_shop_loop', 10);

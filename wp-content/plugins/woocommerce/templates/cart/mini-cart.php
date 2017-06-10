@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php endif; ?>
 						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 
-						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s', $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
 					</li>
 					<?php
 				}
@@ -80,8 +80,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 </ul><!-- end product list -->
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
-
-	<p class="total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
